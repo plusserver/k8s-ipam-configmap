@@ -1,0 +1,22 @@
+package: main
+controllerextra: |
+  ipamshared.SharedController
+imports: |
+  "github.com/Nexinto/k8s-ipam-shared"
+clientsets:
+- name: kubernetes
+  defaultresync: 30
+- name: ipam
+  import: github.com/Nexinto/k8s-ipam
+  defaultresync: 30
+  apis:
+  - name: ipam
+    version: v1
+    group: ipam.nexinto.com
+    resources:
+    - name: IpAddress
+      plural: IpAddresses
+      scope: Namespaced
+      create: true
+      update: true
+      delete: true
