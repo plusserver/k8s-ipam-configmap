@@ -1,6 +1,6 @@
 # k8s-ipam-configmap
 
-Stores IP addresses in a configmap.
+IP address managenent interface using a local ConfigMap backend.
 
 ## Deploy
 
@@ -20,7 +20,7 @@ Then, apply the RBAC configuration and the controller itself:
 
 ```bash
 kubectl apply -f deploy/rbac.yaml
-kubectl apply -f deployment.yaml
+kubectl apply -f deploy/deployment.yaml
 ```
 
 The controller can be configured using the following configuration values:
