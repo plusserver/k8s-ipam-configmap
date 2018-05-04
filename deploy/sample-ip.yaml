@@ -1,0 +1,6 @@
+apiVersion: ipam.nexinto.com/v1
+kind: IpAddress
+metadata:
+  name: myip
+spec:
+  description: My great service runs here.

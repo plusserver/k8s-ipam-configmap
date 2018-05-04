@@ -1,0 +1,23 @@
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  name: ipaddresses.ipam.nexinto.com
+spec:
+  group: ipam.nexinto.com
+  version: v1
+  names:
+    kind: IpAddress
+    plural: ipaddresses
+  scope: Namespaced
+  validation:
+    openAPIV3Schema:
+      properties:
+        spec:
+          properties:
+            ref:
+              type: string
+            name:
+              type: string
+            description:
+              type: string
+

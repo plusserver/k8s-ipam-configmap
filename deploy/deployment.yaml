@@ -1,0 +1,33 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: k8s-ipam-configmap
+  labels:
+    run: k8s-ipam-configmap
+  namespace: kube-system
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k8s-ipam-configmap
+  template:
+    metadata:
+      labels:
+        app: k8s-ipam-configmap
+    spec:
+      serviceAccountName: k8s-ipam-configmap
+      containers:
+      - name: k8s-ipam-configmap
+        image: nexinto/k8s-ipam-configmap
+        env:
+        - name: LOG_LEVEL
+          valueFrom:
+            configMapKeyRef:
+              name: k8s-ipam-configmap
+              key: LOG_LEVEL
+        - name: IPAM_NETWORK
+          valueFrom:
+            configMapKeyRef:
+              name: k8s-ipam-configmap
+              key: IPAM_NETWORK

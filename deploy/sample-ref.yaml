@@ -1,0 +1,7 @@
+apiVersion: ipam.nexinto.com/v1
+kind: IpAddress
+metadata:
+  name: myip-ref
+spec:
+  comment: This is my great service.
+  ref: ConfigMap.default.myip
