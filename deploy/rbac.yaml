@@ -19,8 +19,6 @@ rules:
   - update
   - patch
   - delete
-  resourceNames:
-  - ipam-cm
 - apiGroups:
   - ipam.nexinto.com
   resources:
